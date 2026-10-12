@@ -1,0 +1,800 @@
+/* ==========================================================================
+   Kulita Design System — Web Legal Pages (GitHub Pages)
+   Synchronized with lib/theme/app_colors.dart & lib/theme/app_typography.dart
+   ========================================================================== */
+
+:root {
+  /* Primary botanical deep teals */
+  --primary: #1E4B46;
+  --on-primary: #FFFFFF;
+  --primary-container: #1C534A;
+  --on-primary-container: #8DBAB3;
+  --primary-fixed: #BDECE4;
+  --primary-fixed-dim: #A2CFC8;
+  --on-primary-fixed: #00201D;
+
+  /* Secondary soft warm peaches */
+  --secondary: #7D5543;
+  --on-secondary: #FFFFFF;
+  --secondary-container: #FFC9B1;
+  --on-secondary-container: #7A5240;
+  --secondary-fixed: #FFDBCC;
+
+  /* Tertiary coral & terracotta accents */
+  --tertiary: #E77F67;
+  --on-tertiary: #FFFFFF;
+  --tertiary-fixed: #FFDAD2;
+
+  /* Canvas & surface layers */
+  --canvas: #FAF8F5;
+  --surface: #FBF9F6;
+  --surface-card: #FFFFFF;
+  --surface-tint: #3A6660;
+  --surface-container-lowest: #FFFFFF;
+  --surface-container-low: #F5F3F0;
+  --surface-container: #EFEEEB;
+  --surface-container-high: #EAE8E5;
+  --surface-container-highest: #E4E2DF;
+
+  /* Typography & Neutrals */
+  --on-surface: #1B1C1A;
+  --text-primary: #182C29;
+  --on-surface-variant: #546562;
+  --text-muted: #546562;
+  --outline: #707977;
+  --outline-variant: #C0C8C6;
+  --border-subtle: #EAE6DF;
+
+  /* Semantic */
+  --status-verified: #5B8A72;
+  --status-warning: #D97736;
+  --error: #BA1A1A;
+  --error-container: #FFDAD6;
+
+  /* Borders & Shadows matching Flutter cards */
+  --outline-alpha-15: rgba(112, 121, 119, 0.15);
+  --shadow-card: 0 2px 10px rgba(0, 0, 0, 0.03);
+  --shadow-subtle: 0 2px 6px rgba(0, 0, 0, 0.02);
+  --shadow-elevated: 0 8px 24px rgba(24, 44, 41, 0.06);
+
+  /* Radii */
+  --radius-pill: 9999px;
+  --radius-xl: 20px;
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-sm: 10px;
+  --radius-xs: 8px;
+
+  /* Font Family */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  background-color: var(--surface);
+  color: var(--on-surface);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--surface);
+  color: var(--on-surface);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   Typography Scale (AppTypography)
+   ========================================================================== */
+
+.display-lg {
+  font-size: 2.125rem; /* 34px */
+  font-weight: 800;
+  line-height: 1.235;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.headline-lg {
+  font-size: 1.625rem; /* 26px */
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
+}
+
+.headline-lg-mobile {
+  font-size: 1.375rem; /* 22px */
+  font-weight: 700;
+  line-height: 1.36;
+  letter-spacing: -0.01em;
+  color: var(--on-surface);
+}
+
+.headline-md {
+  font-size: 1.25rem; /* 20px */
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+
+.headline-sm {
+  font-size: 1.0625rem; /* 17px */
+  font-weight: 700;
+  line-height: 1.41;
+  color: var(--on-surface);
+}
+
+.body-lg {
+  font-size: 1rem; /* 16px */
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.body-md {
+  font-size: 0.875rem; /* 14px */
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--on-surface-variant);
+}
+
+.body-sm {
+  font-size: 0.75rem; /* 12px */
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--on-surface-variant);
+}
+
+.label-lg {
+  font-size: 0.875rem; /* 14px */
+  font-weight: 600;
+  line-height: 1.42;
+  color: var(--on-surface);
+}
+
+.label-md {
+  font-size: 0.75rem; /* 12px */
+  font-weight: 600;
+  line-height: 1.33;
+  letter-spacing: 0.01em;
+  color: var(--on-surface-variant);
+}
+
+.label-sm {
+  font-size: 0.6875rem; /* 11px */
+  font-weight: 700;
+  line-height: 1.27;
+  letter-spacing: 0.02em;
+  color: var(--primary);
+}
+
+/* ==========================================================================
+   Sticky Top AppBar
+   ========================================================================== */
+
+.app-bar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: rgba(251, 249, 246, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.app-bar-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--on-surface);
+  font-weight: 700;
+  font-size: 1.0625rem;
+  transition: opacity 0.15s ease;
+}
+
+.brand-link:hover {
+  opacity: 0.85;
+}
+
+.brand-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(30, 75, 70, 0.12);
+}
+
+.app-bar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Navigation Pills inside AppBar */
+.doc-nav {
+  display: flex;
+  align-items: center;
+  background-color: var(--surface-container);
+  padding: 3px;
+  border-radius: var(--radius-pill);
+}
+
+.doc-nav-link {
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--on-surface-variant);
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.doc-nav-link:hover {
+  color: var(--on-surface);
+}
+
+.doc-nav-link.active {
+  background-color: var(--surface-card);
+  color: var(--primary);
+  font-weight: 700;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+/* Language Toggle Switcher */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--surface-container);
+  border: 1px solid var(--outline-alpha-15);
+  border-radius: var(--radius-pill);
+  padding: 2px;
+}
+
+.lang-btn {
+  appearance: none;
+  border: none;
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--on-surface-variant);
+  padding: 4px 9px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.lang-btn:hover {
+  color: var(--on-surface);
+}
+
+.lang-btn.active {
+  background-color: var(--primary);
+  color: var(--on-primary);
+}
+
+/* ==========================================================================
+   Main Layout & Article Container
+   ========================================================================== */
+
+.page-main {
+  flex: 1;
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 16px 20px 32px;
+}
+
+/* Matches PrivacyPolicyPage Main Article Container */
+.article-card {
+  width: 100%;
+  padding: 24px 20px;
+  background-color: var(--surface-container-lowest);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--outline-alpha-15);
+  box-shadow: var(--shadow-card);
+}
+
+@media (min-width: 640px) {
+  .page-main {
+    padding: 28px 24px 48px;
+  }
+
+  .article-card {
+    padding: 32px 32px;
+  }
+}
+
+/* ==========================================================================
+   Badges & Meta Header
+   ========================================================================== */
+
+.meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  line-height: 1.27;
+}
+
+.badge-pill--privacy {
+  background-color: var(--primary-fixed);
+  color: var(--on-primary-fixed);
+}
+
+.badge-pill--terms {
+  background-color: var(--surface-container);
+  color: var(--on-surface-variant);
+  font-weight: 600;
+}
+
+.badge-icon {
+  width: 14px;
+  height: 14px;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.last-updated {
+  font-size: 0.6875rem;
+  color: var(--outline);
+}
+
+.doc-headline {
+  margin-bottom: 8px;
+}
+
+.doc-intro {
+  color: var(--on-surface-variant);
+  line-height: 1.55;
+}
+
+/* ==========================================================================
+   Callout Cards: LegalSummaryCard & MedicalNoticeCard
+   ========================================================================== */
+
+/* Matches LegalSummaryCard */
+.summary-card {
+  width: 100%;
+  margin-top: 16px;
+  margin-bottom: 24px;
+  padding: 14px 16px;
+  background-color: var(--surface-container-low);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--outline-alpha-15);
+}
+
+.summary-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.summary-card-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.summary-card-title {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.summary-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.summary-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--on-surface-variant);
+}
+
+.summary-check-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--primary);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.summary-item strong {
+  font-weight: 700;
+  color: var(--on-surface);
+}
+
+/* Matches MedicalNoticeCard */
+.medical-notice-card {
+  width: 100%;
+  margin-top: 16px;
+  margin-bottom: 24px;
+  padding: 16px;
+  background-color: var(--surface-container-low);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--primary);
+  box-shadow: var(--shadow-subtle);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.medical-notice-icon {
+  width: 22px;
+  height: 22px;
+  color: var(--primary);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.medical-notice-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+.medical-notice-text {
+  font-size: 0.75rem;
+  line-height: 1.48;
+  color: var(--on-surface-variant);
+}
+
+.medical-notice-text strong {
+  font-weight: 700;
+  color: var(--on-surface);
+}
+
+/* ==========================================================================
+   Document Sections (LegalSectionCard & LegalBulletPoint)
+   ========================================================================== */
+
+.section-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 1.0625rem; /* 17px */
+  font-weight: 700;
+  line-height: 1.41;
+  color: var(--on-surface);
+}
+
+.section-number {
+  color: var(--primary);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.section-number--neutral {
+  color: var(--on-surface);
+}
+
+.section-desc {
+  margin-top: 6px;
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.55;
+  color: var(--on-surface-variant);
+}
+
+.section-desc + .section-desc {
+  margin-top: 10px;
+}
+
+.bullet-list {
+  list-style: none;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bullet-item {
+  display: flex;
+  align-items: flex-start;
+  padding-left: 4px;
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.48;
+  color: var(--on-surface-variant);
+}
+
+.bullet-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--on-surface-variant);
+  margin-top: 8px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.bullet-item strong {
+  font-weight: 700;
+  color: var(--on-surface);
+}
+
+.section-divider {
+  border: 0;
+  height: 1px;
+  background-color: var(--surface-container-high);
+  margin: 18px 0;
+}
+
+.section-spacer {
+  height: 20px;
+}
+
+/* ==========================================================================
+   Contact & Support Cards (LegalContactBox & LegalSupportCard)
+   ========================================================================== */
+
+/* Matches LegalContactBox */
+.contact-box {
+  margin-top: 14px;
+  padding: 12px 14px;
+  background-color: var(--surface-container-low);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--outline-alpha-15);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.contact-box:hover {
+  background-color: var(--surface-container);
+  border-color: var(--outline-variant);
+}
+
+.contact-box-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.contact-box-label {
+  display: block;
+  font-size: 0.6875rem;
+  color: var(--on-surface-variant);
+  margin-bottom: 2px;
+}
+
+.contact-box-email {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+/* Matches LegalSupportCard */
+.support-card {
+  width: 100%;
+  padding: 16px;
+  background-color: var(--surface-container);
+  border-radius: var(--radius-md);
+}
+
+.support-card-title {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--on-surface);
+  margin-bottom: 6px;
+}
+
+.support-card-desc {
+  font-size: 0.75rem;
+  line-height: 1.48;
+  color: var(--on-surface-variant);
+  margin-bottom: 10px;
+}
+
+.support-email-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.support-email-link:hover {
+  opacity: 0.85;
+}
+
+/* ==========================================================================
+   Index / Portal Hub Cards
+   ========================================================================== */
+
+.hero-banner {
+  text-align: center;
+  padding: 28px 20px 24px;
+}
+
+.hero-logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: var(--shadow-elevated);
+  margin-bottom: 14px;
+}
+
+.portal-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+@media (min-width: 600px) {
+  .portal-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.portal-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 22px 20px;
+  background-color: var(--surface-container-lowest);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--outline-alpha-15);
+  box-shadow: var(--shadow-card);
+  text-decoration: none;
+  color: var(--on-surface);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.portal-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-elevated);
+  border-color: var(--primary-fixed-dim);
+}
+
+.portal-card-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background-color: var(--surface-container-low);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-container);
+  margin-bottom: 14px;
+}
+
+.portal-card-cta {
+  margin-top: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.page-footer {
+  text-align: center;
+  padding: 20px 20px 32px;
+  font-size: 0.6875rem;
+  color: var(--outline);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.footer-link {
+  color: var(--on-surface-variant);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-link:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Bilingual Visibility Utility & Print Styles
+   ========================================================================== */
+
+html[lang="id"] [data-lang="en"] {
+  display: none !important;
+}
+
+html[lang="en"] [data-lang="id"] {
+  display: none !important;
+}
+
+@media (max-width: 480px) {
+  .brand-title-text {
+    display: none;
+  }
+  .app-bar-inner {
+    padding: 10px 16px;
+  }
+  .page-main {
+    padding: 12px 16px 28px;
+  }
+}
+
+@media print {
+  .app-bar,
+  .footer-links {
+    display: none !important;
+  }
+  body,
+  .article-card {
+    background: #FFFFFF;
+    box-shadow: none;
+    border: none;
+  }
+}
