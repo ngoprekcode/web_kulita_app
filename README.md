@@ -7,6 +7,7 @@ Halaman web statis resmi untuk **Kebijakan Privasi (Privacy Policy)** dan **Kete
 - `index.html` — Halaman Utama (Pusat Legal & Privasi Kulita)
 - `privacy.html` — Halaman Kebijakan Privasi (*Privacy Policy*)
 - `terms.html` — Halaman Ketentuan Layanan (*Terms of Service*)
+- `delete-account.html` — Halaman Hapus Akun & Data (URL untuk kolom "Hapus URL akun" di Google Play Console)
 - `styles.css` — Stylesheet berbasis token warna `AppColors` dan tipografi `AppTypography`
 - `app.js` — Script pengatur bahasa (`?lang=id` / `?lang=en`)
 - `assets/kulita_logo.png` — Logo resmi Kulita
@@ -27,6 +28,7 @@ Halaman web statis resmi untuk **Kebijakan Privasi (Privacy Policy)** dan **Kete
    - Privacy Policy (EN): `https://<username-github>.github.io/web_kulita_app/privacy.html?lang=en`
    - Ketentuan Layanan (ID): `https://<username-github>.github.io/web_kulita_app/terms.html?lang=id`
    - Terms of Service (EN): `https://<username-github>.github.io/web_kulita_app/terms.html?lang=en`
+   - Hapus Akun & Data: `https://<username-github>.github.io/web_kulita_app/delete-account.html`
 
 ### Opsi B: Deploy Langsung dari Folder `/docs` (Jika Repositori Ini Public atau GitHub Pro)
 1. Buka menu **Settings** > **Pages** di repositori ini.
